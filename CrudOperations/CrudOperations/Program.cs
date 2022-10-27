@@ -11,6 +11,7 @@ namespace CrudOperations
     {
         static void Main(string[] args)
         {
+            //created instance of class and calling methods
             operations op = new operations();
             op.CreateUser();
             op.RetriveUser();
