@@ -10,6 +10,8 @@ namespace CrudOperations
     internal class operations
     {
         private SqlConnection con = new SqlConnection("Data Source=MOBACK;DataBase=master;Integrated Security=True");
+
+        //created a method to perform create operation
         public void CreateUser()
         {
             try
@@ -32,6 +34,8 @@ namespace CrudOperations
                 con.Close();
             }
         }
+
+        //created a method to perform Retrieve operation
         public void RetriveUser()
         {
             try
@@ -56,6 +60,8 @@ namespace CrudOperations
                 con.Close();
             }
         }
+
+        //created a method to perform update operation
         public void UpdateUser()
         {
             try
@@ -81,6 +87,8 @@ namespace CrudOperations
                 con.Close();
             }
         }
+
+        //created a method to perform delete operation
         public void DeleteUser()
         {
             try
