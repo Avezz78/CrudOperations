@@ -21,7 +21,7 @@ namespace CrudOperations
                 string userName = Console.ReadLine();
                 Console.Write("Enter Your Age : ");
                 int userAge = int.Parse(Console.ReadLine());
-                SqlCommand insertCmd = new SqlCommand("insert into Userinfo(User_Name,User_age) values('" + userName + "'," + userAge + ")", con);
+                SqlCommand insertCmd = new SqlCommand("SPINSERTDATA'" + userName + "'," + userAge + "", con);//calling procedure
                 insertCmd.ExecuteNonQuery();
                 Console.WriteLine("Data Will be successfully inserted into the table");
             }
@@ -41,7 +41,7 @@ namespace CrudOperations
             try
             {
                 con.Open();
-                SqlCommand displaCmd = new SqlCommand("Select * From Userinfo", con);
+                SqlCommand displaCmd = new SqlCommand("Select * From RETRIEVE_Userinfo", con);
                 SqlDataReader dr = displaCmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -97,7 +97,7 @@ namespace CrudOperations
                 int d_Id;
                 Console.Write("Enter Your id that you would like to delete : ");
                 d_Id = int.Parse(Console.ReadLine());
-                SqlCommand deleteCmd = new SqlCommand("Delete from Userinfo where User_Id = " + d_Id, con);
+                SqlCommand deleteCmd = new SqlCommand("SPDeleteData" + d_Id, con);//calling deleteprocedure
                 deleteCmd.ExecuteNonQuery();
                 Console.WriteLine("record Deleted succesfully :");
             }
